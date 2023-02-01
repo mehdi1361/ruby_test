@@ -17,6 +17,10 @@ class Cat < Pet
   end
 end
 
+class Snake < Pet
+  attr_accessor :length
+end
+
 d = Dog.new
 d.name = "moucha"
 
@@ -38,3 +42,8 @@ puts d.bark
 c = Cat.new
 c.name = "mmmm"
 c.meow("xsxs")
+
+snake = Snake.new
+snake.length = 20
+
+puts "snake length is #{snake.length}"
