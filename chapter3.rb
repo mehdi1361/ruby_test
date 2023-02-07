@@ -1,3 +1,4 @@
+require "colorize"
 age = 24
 puts "You're age!" if age == 24
 
@@ -104,7 +105,8 @@ z = x - y
 p z
 
 x = []
-puts "x is empty" if x.empty?
+puts "x is empty".blue if x.empty?
+
 
 x = [1, 2, 3]
 
@@ -124,3 +126,17 @@ end
 x.length.times do |i|
   puts "hello " + x[i].to_s
 end
+
+puts "hello world".red
+
+a = [1,2,3,4,5,6]
+p a.map { |x|  x * 3}
+
+x = 19
+
+data = "young" if x < 20
+data = "old" if x > 20
+
+puts data
+
+x = input("data")
