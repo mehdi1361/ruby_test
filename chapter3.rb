@@ -139,4 +139,147 @@ data = "old" if x > 20
 
 puts data
 
-x = input("data")
+puts "enter yourname"
+#x = gets
+
+puts "your name is #{x}"
+ x = {"a" =>  "test1", "b" =>"test2"}
+ x.each{|key, value| puts "#{key}: #{value}"}
+
+x = {a: 1, b: 25, c:12}
+x.delete_if{|k, v| v < 25}
+p x
+
+
+people = {
+  eliot: {
+    age: 40,
+    gender: "male",
+    name: "eliot alderson",
+    favorite: ["hack", "angeela"]
+  },
+  darlin: {
+    age: 25,
+    gender: "female",
+    name: "darlin alderson",
+    favorite: ["hack", "fuck"]
+  },
+}
+
+puts people[:eliot]
+puts people[:eliot][:favorite].length
+
+age = 10
+
+puts "you are young" if age < 15
+puts "you are adult" if age > 15
+
+age = 10
+
+type = age < 15 ? "child" : "adult"
+puts "you ars a " + type
+
+age = 18
+
+puts "you are a " + (age < 15 ? "child" : "adult")
+
+def find_fruit_color(fruit)
+  case fruit
+  when "apple"
+    "green"
+  when "orange"
+    "orange"
+  when "banana"
+    "yellow"
+  else
+    "Unknown"
+  end
+end
+
+fruit = "orange"
+
+puts "find #{fruit} color is " + find_fruit_color(fruit)
+
+response = {error: "Bad GateWay", status: 500}
+
+case response
+in {data: data, status: status}
+  puts "succes with #{data} and status is #{status}"
+
+in {error: error, status: status}
+  puts "error with error #{error} and status #{status}"
+end
+
+
+1.upto(5) { |item| puts item}
+
+x = 1
+
+while x < 100
+  puts x
+  x = x * 2
+end
+
+x = 1
+
+until x > 99
+  puts x
+  x = x * 2
+end
+
+i = 1
+i = i * 2 until i > 1000
+
+puts "until one loop response is #{i}"
+puts "until one loop response is " + i.to_s
+
+
+x =[1, 2, 3]
+
+x.each {|number| puts number}
+
+x.each do |number|
+  puts number
+end
+
+x.each { puts _1}
+
+def each_vowel(&code_block)
+  %w{a e i o u}.each {|vowel| code_block.call(vowel)}
+end
+
+each_vowel { |vowel| puts vowel}
+each_vowel { |vowel| puts vowel * 2}
+
+
+def each_vowel
+  %w{a e i o u}.each {|vowel| yield vowel}
+end
+each_vowel { |vowel| puts vowel}
+each_vowel { |vowel| puts vowel * 2}
+
+print_param_to_screen = Proc.new {|x| puts x}
+print_param_to_screen.call(100)
+print_param_to_screen.call("hello world")
+
+class Integer
+  def seconds
+    self
+  end
+
+  def minute 
+    self * 60
+  end
+
+  def hours
+    self * 60 * 60
+  end
+
+  def days
+    self * 60 * 60 * 24
+  end
+end
+
+puts Time.now + 19.minute
+puts Time.now + 19.hours
+puts Time.now + 10.days
