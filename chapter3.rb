@@ -283,3 +283,15 @@ end
 puts Time.now + 19.minute
 puts Time.now + 19.hours
 puts Time.now + 10.days
+
+
+rice_on_square = 1
+64.times do |square|
+  puts "On square #{square + 1} are #{rice_on_square} grain(s)"
+  rice_on_square *= 2
+end
+
+
+('A'..'Z').to_a.each { |letter| puts letter }
+
+('A'..'Z').each { |letter| print letter }
